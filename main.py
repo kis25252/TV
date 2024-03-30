@@ -1,7 +1,7 @@
 try:
     import user_config as config
 except ImportError:
-    import config
+    import config as config
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -65,7 +65,7 @@ class UpdateSource:
                 infoList = []
                 for page in range(1, pageNum):
                     try:
-                        page_url = f"http://tonkiang.us/?page={page}&s={name}"
+                        page_url = f"https://www.foodieguide.com/iptvsearch/?page={page}&s={name}"
                         self.driver.get(page_url)
                         WebDriverWait(self.driver, 10).until(
                             EC.presence_of_element_located(
